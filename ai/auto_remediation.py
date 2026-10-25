@@ -136,6 +136,21 @@ def call_ai(system_prompt, user_prompt, expect_json=False):
     """
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
+        for env_path in [".env", os.path.join(os.path.dirname(__file__), "..", ".env")]:
+            if os.path.exists(env_path):
+                try:
+                    with open(env_path, "r", encoding="utf-8") as f:
+                        for line in f:
+                            line = line.strip()
+                            if line.startswith("OPENROUTER_API_KEY="):
+                                api_key = line.split("=", 1)[1].strip("'\"")
+                                os.environ["OPENROUTER_API_KEY"] = api_key
+                                break
+                except Exception:
+                    pass
+            if api_key:
+                break
+    if not api_key:
         raise ValueError("OPENROUTER_API_KEY environment variable not set!")
  
     last_error = None
