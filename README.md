@@ -154,24 +154,26 @@ python ai/test_simulation.py
 ### Live Demo Incident Matrix:
 | Alert | Target Host | Root Cause Identified | Remediation Action | Playbook | Auto-Fix Status |
 | :--- | :--- | :--- | :--- | :--- | :---: |
-| **`disk_full`** | `web-server-01` | Partition `/dev/sda1` at 94% | Clean cache & old logs | `cleanup_disk.yml` | ✅ Resolved (2.9s) |
-| **`nginx_down`** | `web-server-02` | Port 80 connection refused | Service restart & config check | `restart_nginx.yml` | ✅ Resolved (1.9s) |
-| **`high_cpu`** | `web-server-01` | Sustained 97% CPU usage | Terminate zombie processes | `kill_zombie_processes.yml` | ✅ Resolved (1.9s) |
-| **`high_memory`**| `k8s-node-01` | 91% memory saturation | Memory garbage collection | `restart_service.yml` | ✅ Resolved (2.4s) |
+| **`disk_full`** | `web-server-01` | Partition `/dev/sda1` at 94% | Clean cache & old logs | `cleanup_disk.yml` | ✅ Resolved (2.6s) |
+| **`nginx_down`** | `web-server-02` | Port 80 connection refused | Service restart & config check | `restart_nginx.yml` | ✅ Resolved (1.7s) |
+| **`high_cpu`** | `web-server-01` | Sustained 97% CPU usage | Terminate zombie processes | `kill_zombie_processes.yml` | ✅ Resolved (2.0s) |
+| **`high_memory`**| `k8s-node-01` | 91% memory saturation | Memory garbage collection | `restart_service.yml` | ✅ Resolved (2.1s) |
 | **`service_down`**| `web-server-02` | PostgreSQL process inactive | Safe database restart | `restart_service.yml` | ✅ Resolved (1.9s) |
 
 ---
 
 ## 📊 Research Benchmarks & Empirical Findings
 
-Data compiled directly by [`ai/metrics_collector.py`](file:///d:/Devops/ai/metrics_collector.py) comparing conventional manual triage vs. AI-assisted remediation:
+Data compiled directly by [`ai/metrics_collector.py`](file:///d:/Devops/ai/metrics_collector.py) comparing conventional manual triage vs. AI-assisted remediation across **107 incident records**:
 
 | Metric Indicator | Manual Baseline | AI Auto-Remediation | Performance Delta |
 | :--- | :--- | :--- | :--- |
 | **Playbook Generation Time** | ~480 s (8.0 min) | **80.5 s** | **83.2% Faster** ⚡ |
-| **Incident Response Time** | ~420 s (7.0 min) | **2.2 s** | **99.5% Faster** ⚡ |
-| **Critical Incident Auto-Fix Rate** | N/A (Manual) | **79%** | **Automated** 🤖 |
-| **Human Interventions Required** | 5 / 5 incidents | **0 / 5 incidents** | **Zero Manual Touch** |
+| **Incident Response Time** | ~420 s (7.0 min) | **2.1 s** | **99.5% Faster** ⚡ |
+| **Critical Incident Auto-Fix Rate** | N/A (Manual) | **86% (18/21)** | **Automated** 🤖 |
+| **High Urgency Auto-Fix Rate** | N/A (Manual) | **64% (55/86)** | **Automated** 🤖 |
+| **Overall Auto-Remediation Rate** | N/A (Manual) | **68% (73/107)** | **Automated** 🤖 |
+| **Demo Human Interventions Required** | 5 / 5 incidents | **0 / 5 incidents** | **Zero Manual Touch** |
 | **Operational LLM Cost** | Variable | **$0.00** | **100% Free Tier** 💰 |
 
 ---
