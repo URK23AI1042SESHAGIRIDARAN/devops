@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/myapp
+  IMAGE_NAME: sesha05/myapp
 
 jobs:
 
@@ -37,8 +37,8 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v6
         with:
           args: >
-            -Dsonar.projectKey=URK23CS1218_devopsia3
-            -Dsonar.organization=jeremiah
+            -Dsonar.projectKey=URK23AI1042SESHAGIRIDARAN_devops
+            -Dsonar.organization=urk23ai1042seshagiridaran
             -Dsonar.host.url=https://sonarcloud.io
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
