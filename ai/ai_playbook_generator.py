@@ -26,6 +26,9 @@ import time
 import tempfile
 import subprocess
 from datetime import datetime
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
  
 try:
     import yaml
