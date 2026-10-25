@@ -30,7 +30,7 @@ spec:
         - name: myapp
 
           # ✅ FIX: CI/CD IMAGE (replace dynamically)
-          image: devopslab1218/myapp:IMAGE_TAG_PLACEHOLDER
+          image: sesha05/myapp:IMAGE_TAG_PLACEHOLDER
           imagePullPolicy: Always
 
           ports:
