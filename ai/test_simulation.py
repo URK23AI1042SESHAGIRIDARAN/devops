@@ -28,6 +28,9 @@ import sys
 import time
 import json
 from datetime import datetime
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
  
 # ── Dependencies ────────────────────────────────────────────
 try:

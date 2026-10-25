@@ -81,3 +81,8 @@ timestamp,host,alert_type,action,urgency,safe_to_automate,dry_run,success
 2026-10-26T00:00:10.146248,web-server-01,escalate_to_human,escalate_to_human,high,False,True,False
 2026-10-26T00:00:14.148132,k8s-node-01,escalate_to_human,escalate_to_human,high,False,True,False
 2026-10-26T00:00:18.150122,web-server-02,escalate_to_human,escalate_to_human,high,False,True,False
+2026-10-26T00:35:49.024888,web-server-01,escalate_to_human,escalate_to_human,high,False,True,False
+2026-10-26T00:35:53.025238,web-server-02,escalate_to_human,escalate_to_human,high,False,True,False
+2026-10-26T00:35:57.026047,web-server-01,escalate_to_human,escalate_to_human,high,False,True,False
+2026-10-26T00:36:01.026569,k8s-node-01,escalate_to_human,escalate_to_human,high,False,True,False
+2026-10-26T00:36:05.027186,web-server-02,escalate_to_human,escalate_to_human,high,False,True,False

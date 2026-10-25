@@ -37,6 +37,9 @@ import time
 import subprocess
 import requests
 from datetime import datetime
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
  
 # ── AI Model Configuration ─────────────────────────────────
 AI_MODELS = [
